@@ -11,6 +11,7 @@ create table feedback
   guest_id int not null,
   comments varchar not null,
   likes integer ,
+  unlikes integer,
   created_on TIMESTAMP,
   updated_on TIMESTAMP,
   foreign key (guest_id) references guestuser(guest_id)

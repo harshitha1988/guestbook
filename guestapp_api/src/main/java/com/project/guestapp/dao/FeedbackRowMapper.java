@@ -19,6 +19,7 @@ public class FeedbackRowMapper implements RowMapper<Feedback>{
 		feedback.setUser(new User(rs.getString("guest_name")));
 		feedback.setComment(rs.getString("comments"));
 		feedback.setLikes(rs.getInt("likes"));
+		feedback.setUnLikes(rs.getInt("unlikes"));
 		feedback.setCreateOn(rs.getTimestamp("created_on").toLocalDateTime());
 		
 		return feedback;

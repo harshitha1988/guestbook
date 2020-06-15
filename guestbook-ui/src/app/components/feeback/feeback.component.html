@@ -23,7 +23,7 @@
           <tr *ngFor="let fb of feedbacks">
             <td>{{ fb.user.name }}</td>
             <td>{{ fb.comment }} </td>
-            <td><a [routerLink]="" (click)="addLike(fb)">Like ({{ fb.likes }})</a> | <a [routerLink]="" (click)="removeLike(fb)">UnLike ({{ fb.likes }})</a></td>
+            <td><a [routerLink]="" (click)="addLike(fb)">Like ({{ fb.likes }})</a> | <a [routerLink]="" (click)="removeLike(fb)">UnLike ({{ fb.unLikes }})</a></td>
           </tr>
         </tbody>
       </table>

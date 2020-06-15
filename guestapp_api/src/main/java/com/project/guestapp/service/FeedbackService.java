@@ -53,7 +53,7 @@ public class FeedbackService {
 	public void unLike(int feedbackId) {
 		LOGGER.info("UnLiking feedback " + feedbackId);
 		Feedback feedback = this.feedbackRepository.findFeedback(feedbackId);
-		feedback.setLikes(feedback.getLikes() - 1);
+		feedback.setUnLikes(feedback.getUnLikes() + 1);
 		this.feedbackRepository.updateFeedback(feedback);
 	}
 	

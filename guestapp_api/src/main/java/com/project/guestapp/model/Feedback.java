@@ -11,6 +11,8 @@ public class Feedback {
 	private String comment;
 
 	private int likes;
+	
+	private int unLikes;
 
 	private LocalDateTime createOn;
 
@@ -54,4 +56,13 @@ public class Feedback {
 		this.likes = likes;
 	}
 
+	public int getUnLikes() {
+		return unLikes;
+	}
+
+	public void setUnLikes(int unLikes) {
+		this.unLikes = unLikes;
+	}
+
+	
 }
