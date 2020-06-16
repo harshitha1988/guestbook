@@ -6,5 +6,6 @@ export class Feedback {
     comment: string;
     user: User;
     likes: number;
+    unLikes: number;
 
 }

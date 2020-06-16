@@ -16,15 +16,21 @@ import org.springframework.stereotype.Repository;
 
 import com.project.guestapp.model.User;
 
+/**
+ * Repository class to hold the database operations related to Use
+ * 
+ * @author Harshitha
+ *
+ */
 @Repository
 public class UserRepository {
 
-	 private static final Logger LOG = LoggerFactory.getLogger(UserRepository.class);
+	 private static final Logger LOG = LoggerFactory.getLogger(UserRepository.class);  
 	
 	 @Autowired
 	 JdbcTemplate jdbcTemplate;
 	 
-	 public User findUserByName(String name) {
+	 public User findUserByName(String name) {                //method to check if a user exists when a feedback is created
 		 User user = null;
 		 try {
 			 user = jdbcTemplate.queryForObject("select name as userName, guest_id as userId from guestuser where name= ?", new Object[] {name}, new BeanPropertyRowMapper<User>(User.class));
@@ -37,7 +43,7 @@ public class UserRepository {
 	 }
 	 
 	 public User createUser(User user) {
-		 KeyHolder primaryKey = new GeneratedKeyHolder();
+		 KeyHolder primaryKey = new GeneratedKeyHolder();              //auto-generates an id for every database entry 
 		 
 		 PreparedStatementCreatorFactory factory = new PreparedStatementCreatorFactory(
 				 "insert into guestuser(name, created_on, updated_on) values (? , CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) ", Types.CHAR);

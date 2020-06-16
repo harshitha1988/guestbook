@@ -29,6 +29,13 @@ export class FeebackComponent implements OnInit {
     })
   }
 
+  formIsValid(): boolean {
+    let valid = this.feebackToSave.comment != undefined && this.feebackToSave.comment != '' 
+                this.feebackToSave.user.name != undefined  && this.feebackToSave.user.name != '';
+    //console.log('Form is valid ' + valid);
+    return valid;
+  }
+
   saveFeedback() {
     this.feedbackService.saveFeedback(this.feebackToSave).subscribe( data => {
       console.log(data);
@@ -48,7 +55,7 @@ export class FeebackComponent implements OnInit {
     });;
   }
 
-  removeLike(feedback: Feedback) {
+  addUnLike(feedback: Feedback) {
       console.log('unLiked ...')
       this.feedbackService.unlikeFeedback(feedback).subscribe( data => {
         console.log(data);

@@ -9,7 +9,13 @@ import org.springframework.jdbc.core.RowMapper;
 import com.project.guestapp.model.Feedback;
 import com.project.guestapp.model.User;
 
-public class FeedbackRowMapper implements RowMapper<Feedback>{
+/**
+ * Spring rowmapper implementation for Feedback. Convert sql result set to java object.
+ * 
+ * @author Harshitha
+ *
+ */
+public class FeedbackRowMapper implements RowMapper<Feedback>{       //mapping a database record with the instance of feedback class.
 
 	@Override
 	public Feedback mapRow(ResultSet rs, int rowNum) throws SQLException {

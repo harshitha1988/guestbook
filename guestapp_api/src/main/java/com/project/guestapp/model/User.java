@@ -1,11 +1,18 @@
 package com.project.guestapp.model;
 
+/**
+ * The user domain model
+ * 
+ * @author Harshitha
+ *
+ */
 public class User {
 
 	private String userName;
 	
 	private Integer userId;
 
+	// standard constructors
 	public User() {
 		super();
 	}
@@ -20,6 +27,8 @@ public class User {
 		super();
 		this.userName = name;
 	}
+	
+	//standard  setters / getters 
 	
 	public String getName() {
 		return userName;

@@ -1,12 +1,14 @@
 
  <div class="info">
-    <form id="feedbackForm" action="">
-    <label for="example">Enter name </label>
-    <input id="example" type="text" required  [(ngModel)]="feebackToSave.user.name" size="20" [ngModelOptions]="{standalone: true}">
+    <form id="feedbackForm" action="" class="form-inline " >
+    <label for="userName" class="mr-sm-2">Enter name </label>
+    <input id="userName" class="form-control mb-2 mr-sm-2" 
+           type="text" required [(ngModel)]="feebackToSave.user.name" size="20" [ngModelOptions]="{standalone: true}"
+           placeholder="Enter username">
     
-    <label>Comments</label>
-    <textarea id = "comment" rows="3" cols="50" placeholder="write your comments here" required [(ngModel)]="feebackToSave.comment" [ngModelOptions]="{standalone: true}"></textarea>
-    <button type="button" class="btn btn-info" (click)="saveFeedback()"> submit </button>
+    <label class="mr-sm-2">Comments</label>
+    <textarea id = "comment" class="form-control mb-2 mr-sm-2" rows="1" cols="50" placeholder="write your comments here" required [(ngModel)]="feebackToSave.comment" [ngModelOptions]="{standalone: true}"></textarea>
+    <button type="button" class="btn btn-info" (click)="saveFeedback()" [disabled]="!formIsValid()"> submit </button>
     </form>
 </div>
 <div class="card my-5">
@@ -23,7 +25,8 @@
           <tr *ngFor="let fb of feedbacks">
             <td>{{ fb.user.name }}</td>
             <td>{{ fb.comment }} </td>
-            <td><a [routerLink]="" (click)="addLike(fb)">Like ({{ fb.likes }})</a> | <a [routerLink]="" (click)="removeLike(fb)">UnLike ({{ fb.unLikes }})</a></td>
+            <td><i class="fa fa-thumbs-up" [routerLink]="" (click)="addLike(fb)" aria-hidden="true">({{ fb.likes }})</i> |
+               <i class="fa fa-thumbs-down"  [routerLink]="" (click)="addUnLike(fb)" aria-hidden="true">({{ fb.unLikes }})</i></td>
           </tr>
         </tbody>
       </table>

@@ -13,6 +13,11 @@ import com.project.guestapp.dao.UserRepository;
 import com.project.guestapp.model.Feedback;
 import com.project.guestapp.model.User;
 
+/**
+ * Service class to cover business logic related to feeddback 
+ *  
+ * @author Harshitha
+ */
 @Service
 public class FeedbackService {
 	
@@ -45,7 +50,7 @@ public class FeedbackService {
 	public void addLike(int feedbackId) {
 		 LOGGER.info("Liking feedback " + feedbackId);
 		 Feedback feedback = this.feedbackRepository.findFeedback(feedbackId);
-		 feedback.setLikes(feedback.getLikes() + 1);
+		 feedback.setLikes(feedback.getLikes() + 1);                            //increments the likes 
 		 this.feedbackRepository.updateFeedback(feedback);
 	}
 	
@@ -54,7 +59,7 @@ public class FeedbackService {
 		LOGGER.info("UnLiking feedback " + feedbackId);
 		Feedback feedback = this.feedbackRepository.findFeedback(feedbackId);
 		feedback.setUnLikes(feedback.getUnLikes() + 1);
-		this.feedbackRepository.updateFeedback(feedback);
+		this.feedbackRepository.updateFeedback(feedback);                       //increments the unlikes 
 	}
 	
 	@Transactional

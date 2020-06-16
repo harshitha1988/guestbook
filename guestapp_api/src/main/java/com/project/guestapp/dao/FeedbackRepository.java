@@ -10,6 +10,12 @@ import org.springframework.stereotype.Repository;
 import com.project.guestapp.model.Feedback;
 import com.project.guestapp.model.User;
 
+/**
+ * Repository class to hold the database operations related to feedback
+ * 
+ * @author Harshitha
+ *
+ */
 @Repository
 public class FeedbackRepository {
 

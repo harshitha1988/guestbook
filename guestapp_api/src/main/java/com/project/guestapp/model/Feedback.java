@@ -2,6 +2,12 @@ package com.project.guestapp.model;
 
 import java.time.LocalDateTime;
 
+/**
+ * The Feedback domain model
+ * 
+ * @author Harshitha
+ *
+ */
 public class Feedback {
 
 	private Integer feedbackId;
